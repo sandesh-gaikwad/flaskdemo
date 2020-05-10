@@ -11,6 +11,7 @@ node {
 	stage('Test') {
 		app.inside {
 			echo "Test Passed"
+			sh "python3 tests/testapp.py"
 		}
 	}
 		

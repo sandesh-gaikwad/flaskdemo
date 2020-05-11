@@ -9,7 +9,7 @@ node {
 	}
 	
 	docker.image('python/flaskapp').inside { 			
-		sh "python tests/testapp.py"
+		sh "python3 tests/testapp.py"
 	}
 }
 

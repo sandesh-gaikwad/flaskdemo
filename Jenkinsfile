@@ -13,5 +13,8 @@ node {
 			sh "curl http://${hostIP(c)}:5000/api/v1.0/task"
 		}
 	}
-		
+	def hostIp(container) {
+  		sh "docker inspect -f {{.Node.Ip}} ${container.id} > hostIp"
+  		readFile('hostIp').trim()
+	}	
 }

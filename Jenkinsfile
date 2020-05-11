@@ -8,6 +8,7 @@ node {
 		def ip = hostIp(c)
 		docker.image('python-flaskapp').inside {
 			sh "echo ${ip}"
+			sh "python3 tests/testapp.py"
 		}
 	}
 }

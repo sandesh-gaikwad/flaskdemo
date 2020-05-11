@@ -1,5 +1,8 @@
 node {
 	def app
+	stage('Docker Build'){
+		app = docker.build('python-flaskapp')
+	}
 	docker.image('python-flaskapp').withRun { c-> 
 		def ip = hostIp(c)
 		docker.image('python-flaskapp').inside {

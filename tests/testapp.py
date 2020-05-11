@@ -1,7 +1,7 @@
 import requests
 import json
 
-URL = "http://0.0.0.0:5000/api/v1.0/task"
+URL = "http://172.17.0.3:5000/api/v1.0/task"
 PASS=0
 FAIL=0
 TOTAL = 0

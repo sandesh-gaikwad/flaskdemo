@@ -1,5 +1,6 @@
 node {
 	def app
+	checkout scm
 	stage('Docker Build'){
 		app = docker.build('python-flaskapp')
 	}

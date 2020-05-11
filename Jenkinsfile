@@ -9,7 +9,7 @@ node {
 	}
 	
 	docker.image('python/flaskapp').inside { 			
-		sh "python3 tests/testapp.py"
+		sh "curl http://127.0.0.1:5000/api/v1.0/task"
 	}
 }
 

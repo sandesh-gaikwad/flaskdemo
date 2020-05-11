@@ -8,12 +8,8 @@ node {
 		app = docker.build('python/flaskapp')
 	}
 	
-	stage('Test') {
-		docker.image('python/flaskapp').withRun('-p 5000:5000') { c->
-			sh "curl http://localhost:5000/api/v1.0/task"
-		}
-	
+	docker.image('python/flaskapp').inside { 			
+		sh "curl http://127.0.0.1:5000/api/v1.0/task"
 	}
-		
 }
 

@@ -10,7 +10,7 @@ node {
 	
 	stage('Test') {
 		docker.image('python/flaskapp').withRun('-p 5000:5000') { c->
-			sh "curl http://0.0.0.0:5000/api/v1.0/task"
+			sh "curl http://${hostIP(c)}:5000/api/v1.0/task"
 		}
 	}
 		
